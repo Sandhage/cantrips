@@ -1,0 +1,36 @@
+div.card {
+  border: 1px solid coral;
+
+  border-radius: 3px;
+  height: 400px;
+  width:  300px;
+
+  div.header {
+    height: 200px;
+
+    div.icon {
+      background-color: lightsalmon;
+      border-radius: 50%;
+      height: 125px;
+      margin: -40px auto 0;
+      width:  125px;
+    }
+
+    div.name-container {
+      margin: 15px auto;
+      width: 200px;
+    }
+  }
+
+  div.body {
+    display: flex;
+    height: 240px;
+    width: inherit;
+
+    div.traits-container {
+      align-self: flex-end;
+      padding: 15px;
+      width: 100%;
+    }
+  }
+}
