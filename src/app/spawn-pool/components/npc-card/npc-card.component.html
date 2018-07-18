@@ -5,25 +5,20 @@
     <div class="name-container">
 
       <mat-form-field>
-        <input matInput placeholder="NPC Name">
+        <input matInput placeholder="NPC Name" [value]="npc.name">
       </mat-form-field>
 
     </div>
   </div>
 
+  <div>
+    <span>Race {{npc.race}}</span>
+  </div>
   <div class="body">
-
-    <div>
-
-    </div>
-
     <div class="traits-container">
       <label for="traits">Traits</label>
       <mat-list name="traits" dense>
-        <mat-list-item>Has FRECKLES on EARS</mat-list-item>
-        <mat-list-item>Says LIKE a lot</mat-list-item>
-        <mat-list-item>Is ARROGANT and FRIENDLY</mat-list-item>
-        <mat-list-item>Wears A POCKETWATCH</mat-list-item>
+        <mat-list-item *ngFor="let trait of npc.traits">{{trait}}</mat-list-item>
       </mat-list>
 
     </div>

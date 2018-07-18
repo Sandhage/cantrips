@@ -1,11 +1,15 @@
 import { BrowserModule }    from '@angular/platform-browser';
 import { NgModule }         from '@angular/core';
-import { RouterModule }     from '@angular/router';
+
+/** Components */
+import { AppComponent } from './app.component';
+
+/** Modules and Routers */
+import { CantripRouter }    from './app.routing';
 import { SpawnPoolModule }  from './spawn-pool/spawn-pool.module';
 
-import { CantripRouter }    from './app.routing';
-
-import { AppComponent } from './app.component';
+/** Services and Utilities */
+import { MathUtilsService } from './services/math-utils.service';
 
 
 
@@ -18,7 +22,9 @@ import { AppComponent } from './app.component';
     CantripRouter.ROUTING,
     SpawnPoolModule
   ],
-  providers: [],
+  providers: [
+    MathUtilsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
