@@ -3,10 +3,13 @@
   <h1>
     Welcome to Cantrips!
   </h1>
+
+  <button id="spawn-btn" (click)="onClick($event)">SPAWN POOL</button>
+  <button id="party-btn" (click)="onClick($event)">PARTY SCRYER</button>
+  <button id="hoard-btn" (click)="onClick($event)">ACQUISITIONS MANAGEMENT</button>
 </div>
 
-<button id="spawn-btn" (click)="onClick($event)">SPAWN POOL</button>
-<button id="party-btn" (click)="onClick($event)">PARTY SCRYER</button>
-<button id="hoard-btn" (click)="onClick($event)">ACQUISITIONS MANAGEMENT</button>
+
+
 
 <router-outlet></router-outlet>
