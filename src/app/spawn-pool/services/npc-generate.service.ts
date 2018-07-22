@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
 /** Models */
-import { NpcBits } from "../../models/npc-bits";
+import { NpcBits } from   '../../models/npc-bits';
+import { NpcClass } from  '../../models/npc';
 
 /** Services */
 import { MathUtilsService } from '../../services/math-utils.service';
@@ -12,6 +13,14 @@ export class NpcGenerateService {
   constructor(
     private math: MathUtilsService
   ) {}
+
+  public generateNpc(): NpcClass {
+    return new NpcClass(new NpcClass({
+      name:   this.generateTwoNames(this.math.randomNum(3), this.math.randomNum(4)),
+      race:   this.generateRace(),
+      traits: this.generateTraits(3)
+    }));
+  }
 
   public generateTraits(limit: number): Array<string> {
     const array = [];

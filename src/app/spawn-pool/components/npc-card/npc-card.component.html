@@ -1,6 +1,20 @@
 <div class="card">
   <div class="header">
+    <!--
+    <div class="attributes physical">
+      <div class="attribute">CON: {{npc.attributes.constitution.base}}</div>
+      <div class="attribute">DEX: {{npc.attributes.dexterity.base}}</div>
+      <div class="attribute">STR: {{npc.attributes.strength.base}}</div>
+    </div>
+    -->
     <div class="icon"></div>
+    <!--
+    <div class="attributes mental>
+      <div class="attribute">CHA: {{npc.attributes.charisma.base}}</div>
+      <div class="attribute">INT: {{npc.attributes.intelligence.base}}</div>
+      <div class="attribute">WIS: {{npc.attributes.wisdom.base}}</div>
+    </div>
+    -->
 
     <div class="name-container">
 
@@ -12,15 +26,15 @@
   </div>
 
   <div>
-    <span>Race {{npc.race}}</span>
+    <span>{{npc.race}}</span>
   </div>
+
   <div class="body">
     <div class="traits-container">
       <label for="traits">Traits</label>
       <mat-list name="traits" dense>
         <mat-list-item *ngFor="let trait of npc.traits">{{trait}}</mat-list-item>
       </mat-list>
-
     </div>
   </div>
 </div>
