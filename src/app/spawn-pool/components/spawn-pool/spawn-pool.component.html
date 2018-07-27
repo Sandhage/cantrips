@@ -1,7 +1,7 @@
 <div class="card-container">
   <ng-container *ngFor="let npc of npcs">
     <div>
-      <button class="cull-btn" (click)="cullNpc(npc)"></button>
+      <button class="cull-btn" (click)="cullNpc(npc)"> x </button>
       <npc-card  [npc]="npc"></npc-card>
     </div>
   </ng-container>

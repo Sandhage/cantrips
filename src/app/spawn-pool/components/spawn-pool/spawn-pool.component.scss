@@ -19,4 +19,16 @@ div.card-container {
     height:           40px;
     width:            40px;
   }
+
+  button.cull-btn {
+    background-color: lightsalmon;
+    border: 1px solid salmon;
+    border-radius: 50%;
+    color: white;
+    height: 25px;
+    left: -10px;
+    position: relative;
+    top: 12px;
+    width: 25px;
+  }
 }

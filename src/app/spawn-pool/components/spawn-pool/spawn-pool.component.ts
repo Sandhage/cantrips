@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NpcClass } from '../../../models/npc';
+import * as _ from 'lodash';
 
 /** Services and Utilites */
 import { MathUtilsService } from '../../../services/math-utils.service';
@@ -23,7 +24,7 @@ export class SpawnPoolComponent implements OnInit {
   }
 
   cullNpc(npc: NpcClass): void {
-    debugger;
+    this.npcs = _.pull(this.npcs, npc);
   }
 
   spawnNpc(): void {
