@@ -9,6 +9,7 @@ import { NpcCardComponent } from './components/npc-card/npc-card.component';
 
 /** Services and Utilities */
 import { NpcGenerateService } from './services/npc-generate.service';
+import { StatGenerateService} from "./services/stat-generate.service";
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { NpcGenerateService } from './services/npc-generate.service';
     SpawnPoolComponent
   ],
   providers: [
-    NpcGenerateService
+    NpcGenerateService,
+    StatGenerateService
   ]
 })
 export class SpawnPoolModule { }

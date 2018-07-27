@@ -1,35 +1,30 @@
 import { Injectable } from '@angular/core';
 
 /** Models */
-import { NpcBits } from   '../../models/npc-bits';
-import { NpcClass } from  '../../models/npc';
+import { NpcBits }    from   '../../models/npc-bits';
+import { NpcClass }   from  '../../models/npc';
 
-/** Services */
+/** Services and Utilities */
 import { MathUtilsService } from '../../services/math-utils.service';
-
+import { StatGenerateService } from "./stat-generate.service";
 
 @Injectable()
 export class NpcGenerateService {
   constructor(
-    private math: MathUtilsService
+    private math: MathUtilsService,
+    private npcStats: StatGenerateService
   ) {}
 
   public generateNpc(): NpcClass {
-    return new NpcClass(new NpcClass({
-      name:   this.generateTwoNames(this.math.randomNum(3), this.math.randomNum(4)),
-      race:   this.generateRace(),
-      traits: this.generateTraits(3)
+    let npc: NpcClass = new NpcClass(new NpcClass({
+      name:       this.generateTwoNames(this.math.randomNum(3), this.math.randomNum(4)),
+      race:       this.generateRace(),
+      traits:     this.generateTraits(3)
     }));
-  }
 
-  public generateTraits(limit: number): Array<string> {
-    const array = [];
+    npc.attributes = this.npcStats.generateStats(npc.race);
 
-    for (var i = 0; i < limit; i++) {
-      array.push(this.composeTrait());
-    }
-
-    return array;
+    return npc;
   }
 
   public generateSingleName(syllables: number): string {
@@ -50,6 +45,16 @@ export class NpcGenerateService {
 
   public generateRace(): string {
     return this.randomArrayItem(NpcBits.races);
+  }
+
+  public generateTraits(limit: number): Array<string> {
+    const array = [];
+
+    for (var i = 0; i < limit; i++) {
+      array.push(this.composeTrait());
+    }
+
+    return array;
   }
 
   /** TODO: create pool of traits and adjectives to combine */

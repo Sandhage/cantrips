@@ -21,7 +21,6 @@ export class CharacterAttributes {
     this.strength     = options ? options.strength      : new Attribute();
     this.wisdom       = options ? options.wisdom        : new Attribute();
   }
-
 }
 
 export class Attribute {
